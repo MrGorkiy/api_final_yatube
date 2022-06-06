@@ -148,3 +148,5 @@ dmypy.json
 # папки со статикой и медиа
 media/
 yatube_api/posts/static/
+
+core-commit.sh
