@@ -1,10 +1,10 @@
-from posts.models import Comment, Follow, Group, Post, User
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 
+from posts.models import Comment, Follow, Group, Post, User
 from .permissions import OwnerOrReadOnly, ReadOnly
 from .serializers import (
     CommentDetailSerializer,

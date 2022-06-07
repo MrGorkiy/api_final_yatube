@@ -1,8 +1,9 @@
 from django.contrib.auth import get_user_model
-from posts.models import Comment, Follow, Group, Post
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
 from rest_framework.validators import UniqueTogetherValidator
+
+from posts.models import Comment, Follow, Group, Post
 
 User = get_user_model()
 
@@ -29,17 +30,7 @@ class FollowSerializer(serializers.ModelSerializer):
             )
         ]
 
-    # def create(self, validated_data):
-    #     following = self.initial_data.get('following')
-    #     following = User.objects.get(username=following)
-    #     user = validated_data.pop('user')
-    #     print(following, user)
-    #     if following != user:
-    #         follow = Follow.objects.create(user=user, following=following)
-    #         return follow
-
     def validate_following(self, value):
-        print(value)
         following = User.objects.get(username=value)
         if not following:
             raise serializers.ValidationError("Пользователь не найден!")
