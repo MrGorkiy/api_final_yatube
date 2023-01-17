@@ -480,3 +480,5 @@ python manage.py migrate
 python manage.py runserver
 ```
 [:arrow_up:Функционал](#Функционал)
+
+Автор: [MrGorkiy](https://github.com/MrGorkiy)
