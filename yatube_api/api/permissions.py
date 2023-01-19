@@ -16,7 +16,3 @@ class ReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
         raise MethodNotAllowed("Добавление новых групп запрещено!")
-        # Если сделать как ниже, то статус ошибки возвращается 405, а тесты
-        # требуют 403, не понимаю как и где переопределить это, поэтому
-        # реализовал так
-        # return request.method in permissions.SAFE_METHODS
